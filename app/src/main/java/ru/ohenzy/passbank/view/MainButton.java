@@ -26,7 +26,6 @@ public class MainButton extends LinearLayout {
         params.rightMargin = 40;
         text = new TextView(activity.getApplicationContext());
         text.setText(account.getName());
-        text.setTextColor(Color.BLACK);
         text.setTextColor(Color.WHITE);
         text.setTextSize(18);
         this.setBackgroundColor(Color.GRAY);
@@ -50,15 +49,14 @@ public class MainButton extends LinearLayout {
         params.rightMargin = 40;
         text = new TextView(activity.getApplicationContext());
         text.setText(name);
-        text.setTextColor(Color.BLACK);
         text.setTextColor(Color.WHITE);
         text.setTextSize(18);
-        this.setBackgroundColor(Color.GRAY);
+        this.setBackgroundColor(Color.parseColor("#353A3C"));
         this.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 MainButton.this.setBackgroundColor(Color.LTGRAY);
-                activity.swapActivity(new AccountData("","",""));
+                activity.swapActivity(new AccountData());
                 activity.finish();
             }
         });

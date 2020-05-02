@@ -6,6 +6,8 @@ import android.graphics.Color;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
+
 import java.util.List;
 import ru.ohenzy.passbank.activity.MainActivity;
 import ru.ohenzy.passbank.struct.AccountData;
@@ -23,13 +25,21 @@ public class MainLayout extends LinearLayout {
         this.activity = activ;
         this.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
         this.setOrientation(LinearLayout.VERTICAL);
+        this.setBackgroundColor(Color.DKGRAY);
         params = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 200);
         params.gravity = Gravity.CENTER;
-        params.topMargin = 100;
+        params.topMargin = 50;
+        params.bottomMargin = 50;
         params.leftMargin = 40;
         params.rightMargin = 40;
+    }
 
-
+    public ScrollView scroll(){
+        ScrollView scroll = new ScrollView(activity.getApplicationContext());
+        scroll.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+        scroll.setBackgroundColor(Color.DKGRAY);
+        scroll.addView(this);
+        return  scroll;
     }
 
     public void addList(List<AccountData> accounts){
