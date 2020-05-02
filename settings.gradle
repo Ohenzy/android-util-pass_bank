@@ -1,0 +1,2 @@
+rootProject.name='PassBank'
+include ':app'
